@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+
+    <package name="Test" extends="struts-default">
+        <global-allowed-methods>regex:.*</global-allowed-methods>
+        <action name="*Action" class="Test.test" method="{1}">
+            <result name="success">/index2.jsp</result>
+            <result name="ok">/index.jsp</result>
+        </action>
+        <action name="test2" class="Test.test2">
+            <result name="success">/index2.jsp</result>
+        </action>
+    </package>
+</struts>
